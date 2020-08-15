@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "HFhDPD6GX5s60VN45ae2dAv4JAt1s4Ul5I0ukN0lV3g+ouQaDKnL/NhNEu/HykWj33nCup8Rpz+UbjeY6eOByQ==",
+  "success": true,
+  "projectFilePath": "/Users/ajachoud/Ajay/Learning/Azure/github-azure/HelloWorld/RabbitMQ/Producer/microservice-producer/microservice-producer.csproj",
+  "expectedPackageFiles": [
+    "/Users/ajachoud/.nuget/packages/json.net/1.0.23/json.net.1.0.23.nupkg.sha512",
+    "/Users/ajachoud/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/ajachoud/.nuget/packages/rabbitmq.client/6.1.0/rabbitmq.client.6.1.0.nupkg.sha512",
+    "/Users/ajachoud/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
+    "/Users/ajachoud/.nuget/packages/system.threading.channels/4.7.1/system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

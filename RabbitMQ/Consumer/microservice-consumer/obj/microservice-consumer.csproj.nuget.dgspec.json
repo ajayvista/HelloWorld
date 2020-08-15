@@ -1,0 +1,78 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ajachoud/Ajay/Learning/Azure/github-azure/HelloWorld/RabbitMQ/Consumer/microservice-consumer/microservice-consumer.csproj": {}
+  },
+  "projects": {
+    "/Users/ajachoud/Ajay/Learning/Azure/github-azure/HelloWorld/RabbitMQ/Consumer/microservice-consumer/microservice-consumer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ajachoud/Ajay/Learning/Azure/github-azure/HelloWorld/RabbitMQ/Consumer/microservice-consumer/microservice-consumer.csproj",
+        "projectName": "microservice-consumer",
+        "projectPath": "/Users/ajachoud/Ajay/Learning/Azure/github-azure/HelloWorld/RabbitMQ/Consumer/microservice-consumer/microservice-consumer.csproj",
+        "packagesPath": "/Users/ajachoud/.nuget/packages/",
+        "outputPath": "/Users/ajachoud/Ajay/Learning/Azure/github-azure/HelloWorld/RabbitMQ/Consumer/microservice-consumer/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/ajachoud/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Json.Net": {
+              "target": "Package",
+              "version": "[1.0.23, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
