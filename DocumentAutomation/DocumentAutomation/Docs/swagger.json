@@ -1,0 +1,379 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NBS banking cao service",
+    "description": "NBS Banking,  cao orchestration API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/caoorchestration/{appId}/bearertoken": {
+      "get": {
+        "tags": [
+          "CaoOrchestration"
+        ],
+        "summary": "Retrive application status for specified application id",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "unique identifier of the application to be retrived.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "unique identifier of the application to be retrived.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "x-Journey-Id",
+            "in": "header",
+            "description": "journey id associated with the application.",
+            "schema": {
+              "type": "string",
+              "description": "journey id associated with the application.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns token in Authorization header"
+          },
+          "400": {
+            "description": "Incorrect App Id or Journey-id"
+          },
+          "404": {
+            "description": "No record found"
+          },
+          "500": {
+            "description": "An unexpected fault happened. Try again later"
+          }
+        }
+      }
+    },
+    "/api/v1/caoorchestration/{appId}/auditlogs": {
+      "get": {
+        "tags": [
+          "CaoOrchestration"
+        ],
+        "summary": "Retrive application status for specified application id",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "unique identifier of the application to be retrived.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "unique identifier of the application to be retrived.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Specified application audit log was retrieved sucessfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationRequestAuditLogListResponsePayload"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Incorrect App Id"
+          },
+          "404": {
+            "description": "No record found"
+          },
+          "500": {
+            "description": "An unexpected fault happened. Try again later"
+          }
+        }
+      }
+    },
+    "/api/v1/caoorchestration/{appId}/enlist": {
+      "get": {
+        "tags": [
+          "CaoOrchestration"
+        ],
+        "summary": "Retrive the number of applications sucessfully enlisted.",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "x-Journey-Id",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully enlisted"
+          },
+          "400": {
+            "description": "Incorrect App Id or Journey-id"
+          },
+          "404": {
+            "description": "No record found"
+          },
+          "500": {
+            "description": "An unexpected fault happened. Try again later"
+          }
+        }
+      }
+    },
+    "/api/v1/caoorchestration/{appId}/resume": {
+      "get": {
+        "tags": [
+          "CaoOrchestration"
+        ],
+        "summary": "Resume the application orchestration",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "application id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "application id",
+              "nullable": true
+            }
+          },
+          {
+            "name": "x-Journey-Id",
+            "in": "header",
+            "description": "Journey id",
+            "schema": {
+              "type": "string",
+              "description": "Journey id",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully resumed"
+          },
+          "400": {
+            "description": "Incorrect App Id or Journey-id"
+          },
+          "403": {
+            "description": "Access was denied for this operation"
+          },
+          "404": {
+            "description": "No record found"
+          },
+          "500": {
+            "description": "An unexpected fault happened. Try again later"
+          }
+        }
+      }
+    },
+    "/api/v1/caoorchestration/{appId}/cancel": {
+      "post": {
+        "tags": [
+          "CaoOrchestration"
+        ],
+        "summary": "cancels orchestration of the requested application.",
+        "parameters": [
+          {
+            "name": "x-Journey-Id",
+            "in": "header",
+            "description": "unique journey identifier associated with the cao queue entry.",
+            "schema": {
+              "type": "string",
+              "description": "unique journey identifier associated with the cao queue entry.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "unique identifier of application associated with the cao queue entry",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "unique identifier of application associated with the cao queue entry",
+              "nullable": true
+            }
+          },
+          {
+            "name": "rv",
+            "in": "query",
+            "description": "row version",
+            "schema": {
+              "type": "string",
+              "description": "row version",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully cancelled the application request"
+          },
+          "400": {
+            "description": "Incorrect request state OR parameters"
+          },
+          "403": {
+            "description": "Access was denied for this operation"
+          },
+          "404": {
+            "description": "No record found"
+          },
+          "500": {
+            "description": "An unexpected fault happened. Try again later"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApplicationRequestAuditLog": {
+        "required": [
+          "appId"
+        ],
+        "type": "object",
+        "properties": {
+          "logId": {
+            "maxLength": 40,
+            "type": "string",
+            "description": "Unique identifier of the audit log record\r\nThis is same as the rowversion of the audited record",
+            "nullable": true
+          },
+          "accessTokens": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "metadata / summary of the Access token in original record",
+            "nullable": true
+          },
+          "appId": {
+            "maxLength": 25,
+            "type": "string",
+            "description": "Unique identifier of the Application associated with the queue item"
+          },
+          "deferUntil": {
+            "type": "string",
+            "description": "an absolute point in time until which this queue item should not be processed.",
+            "format": "date-time"
+          },
+          "retryCount": {
+            "type": "integer",
+            "description": "number of times the last action has been retried for this queue item.",
+            "format": "int32"
+          },
+          "lastAction": {
+            "maxLength": 25,
+            "type": "string",
+            "description": "Last Action that was performed on this item.",
+            "nullable": true
+          },
+          "status": {
+            "maxLength": 25,
+            "type": "string",
+            "description": "status of the LastAction performed on this record.",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "flag indicating if the request is being active for orchestration"
+          },
+          "auditReference": {
+            "type": "string",
+            "description": "unique guid that can identifiy a set of records associated with a single database operation.",
+            "format": "uuid"
+          },
+          "lastUpdatedDatetime": {
+            "type": "string",
+            "description": "timestamp when the record was last updated",
+            "format": "date-time"
+          },
+          "lastUpdatedBy": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "string indicating the identity causing the update.",
+            "nullable": true
+          },
+          "rowVersion": {
+            "type": "string",
+            "description": "sql row version of the record",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "lastModifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a change to the CAO queue item"
+      },
+      "ResponsePayloadType": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ResponseStatus": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "retry": {
+            "type": "boolean"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ResponsePayloadType"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicationRequestAuditLogListResponsePayload": {
+        "type": "object",
+        "properties": {
+          "responsePayload": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationRequestAuditLog"
+            },
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/ResponseStatus"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
