@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.808.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentAutomation", "DocumentAutomation\DocumentAutomation.csproj", "{FCB4A1AB-6548-41C0-848E-6B87E6824E86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentAutomationTest", "DocumentAutomationTest\DocumentAutomationTest.csproj", "{2925717F-F7AF-4578-B848-49B59653C196}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCB4A1AB-6548-41C0-848E-6B87E6824E86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB4A1AB-6548-41C0-848E-6B87E6824E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB4A1AB-6548-41C0-848E-6B87E6824E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB4A1AB-6548-41C0-848E-6B87E6824E86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2925717F-F7AF-4578-B848-49B59653C196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2925717F-F7AF-4578-B848-49B59653C196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2925717F-F7AF-4578-B848-49B59653C196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2925717F-F7AF-4578-B848-49B59653C196}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7C83CFB-3856-45B0-A548-2E7736F56220}
+	EndGlobalSection
+EndGlobal
